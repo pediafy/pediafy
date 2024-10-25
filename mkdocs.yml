@@ -1,0 +1,94 @@
+site_name: pediafy
+site_url: https://pediafy.com
+site_author: pediafy
+site_description: pediafy for everyone
+site_dir: site
+
+theme:
+    name: material
+
+    font:
+      text: Roboto
+      code: Roboto Mono
+
+    palette:
+
+    # Palette toggle for automatic mode
+      - media: "(prefers-color-scheme)"
+        primary: green
+        accent: teal
+        toggle:
+          icon: material/brightness-auto
+          name: Switch to light mode
+
+    # Palette toggle for light mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: default 
+        primary: green
+        accent: teal
+        toggle:
+          icon: material/brightness-7
+          name: Switch to dark mode
+
+    # Palette toggle for dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: green
+        accent: teal
+        toggle:
+          icon: material/brightness-4
+          name: Switch to system preference
+    
+    features:
+      - navigation.tracking
+      - navigation.tabs
+      - navigation.tabs.sticky
+      - navigation.sections
+      - navigation.expand
+      - navigation.path
+      - navigation.prune
+      - navigation.indexes
+      - toc.follow
+      - toc.integrate
+      - navigation.top
+      - search.suggest
+      - search.highlight
+      - search.share
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - blog:
+      enabled: true
+      blog_dir: blog
+      blog_toc: true
+      post_dir: "{blog}/articles"
+      post_date_format: long
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{slug}"
+      
+      authors: true
+      authors_file: "{blog}/.authors.yml"
+      authors_profiles: true
+      authors_profiles_name: Authors
+      authors_profiles_url_format: "{slug}"
+      authors_profiles_pagination: true
+      authors_profiles_pagination_per_page: 5
+      authors_profiles_toc: true
+      pagination: true
+      pagination_per_page: 5
+      pagination_url_format: "page/{page}"
+      pagination_format: "~2~"
+      pagination_if_single_page: true
+      pagination_keep_content: true
+      draft: true
+      draft_on_serve: true
+      draft_if_future_date: true
+
+
+nav:
+  - Home: index.md
+  - Blog:
+    - Blog: blog/index.md
+    - Post:
+      - blog/posts/hello-world.md
